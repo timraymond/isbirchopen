@@ -6,6 +6,5 @@ describe LocationsController do
       get :index
       assigns(:locations).should eq(Location.all)
     end
-    it "displays the status of each location"
   end
 end
