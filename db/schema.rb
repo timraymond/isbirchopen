@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120214021944) do
+ActiveRecord::Schema.define(:version => 20120223012159) do
+
+  create_table "hours", :force => true do |t|
+    t.integer  "open_hour"
+    t.integer  "open_minute"
+    t.integer  "closed_hour"
+    t.integer  "closed_minute"
+    t.string   "day"
+    t.integer  "location_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "locations", :force => true do |t|
     t.string   "name"
