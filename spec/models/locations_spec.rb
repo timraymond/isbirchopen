@@ -6,6 +6,12 @@ describe Location do
     location.name.should eq("Birch")
   end
 
+  it "should not allow empty names" do
+    location = Location.new
+    location.should be_invalid
+    location.errors[:name].should be_present
+  end
+
   describe '.status' do
     it "should return whether or not a location is open" do
       location = FactoryGirl.create(:location)

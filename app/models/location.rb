@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
   has_many :hours
+  validates_presence_of :name
 
   def status(time = Time.now)
     #returns true if the location is open, false if not
