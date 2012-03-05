@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore all image assets
+/app/assets/images
+
+# Ignore the sass cache
+.sass-cache

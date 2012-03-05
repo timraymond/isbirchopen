@@ -1,0 +1,86 @@
+
+/****************************************************************
+*                          Font Imports                         *
+****************************************************************/
+
+@import url(http://fonts.googleapis.com/css?family=Damion);
+@import url(http://fonts.googleapis.com/css?family=Short+Stack);
+
+/****************************************************************
+*                       Color Definitions                       *
+****************************************************************/
+$brown:         #6b4226;
+/****************************************************************
+*                           Mixins                              *
+****************************************************************/
+
+/* Stitched Effect
+* Taken from: http://css-tricks.com/snippets/css/stitched-look/ */
+@mixin stitched($patch-color, $thread-color) {
+  /* Background */
+  background: $patch-color;
+
+  /* Border */
+  border: 2px dashed $thread-color;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+
+  /* Shadow */
+  box-shadow: 0 0 0 4px $patch-color, 2px 1px 6px 4px rgba(10,10,0,.5);
+
+  /* Spacing */
+  padding: 5px 10px;
+  margin: 10px;
+
+  /* Font */
+  font-size: 24pt;
+  font-weight: bold;
+  line-height: 20px;
+  text-shadow: -1px -1px $patch-color;
+  font-weight: normal;
+}
+
+@mixin paper {
+  background-image: image-url('groovepaper.png');
+  background-repeat: repeat;
+
+  border: 8px solid #eee;
+}
+
+/*****************************************************************
+*                    Page Styles                                 *
+*****************************************************************/
+body {
+  background-image: image-url('wood_pattern.png');
+  background-repeat: repeat;
+}
+
+.container {
+  h1 {
+    @include stitched($brown, lighten($brown, 20%));
+
+    /* Set properties for the logo */
+    font-family: 'Damion', cursive;
+    text-align: center;
+    color: #fff;
+  }
+
+    ul {
+      @include paper;
+      li {
+        display: block;
+      
+        width: 220px;
+        margin: 0 auto;
+        padding: 10px;
+        font-family: 'Short Stack', cursive;
+        text-align: right;
+        font-size: 16pt;
+      }
+
+      img {
+        display: inline;
+      }
+    }
+  }
