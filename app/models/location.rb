@@ -4,16 +4,12 @@ class Location < ActiveRecord::Base
 
   def status(time = Time.now)
     #returns true if the location is open, false if not
-    self.hours.map do |hour|
-      hour.span.cover?(time)
-    end.reduce(false) do |found, span|
-      if span == true
+
+    self.hours.reduce(nil) do |found, hour|
+      if hour.span.cover?(time) || found
         found = true
       end
     end
-    #self.hours.each do |hour|
-    # return true if hour.span.cover?(Time.now)
-    #end
-    #return false
+
   end
 end
