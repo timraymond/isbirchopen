@@ -26,5 +26,3 @@
 /public/*.png
 /public/*.ico
 
-# Do not track precompiled assets
-/public/assets
