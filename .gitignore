@@ -19,3 +19,12 @@
 
 # Ignore the sass cache
 .sass-cache
+
+# Ignore public images
+/public/*.jpg
+/public/*.gif
+/public/*.png
+/public/*.ico
+
+# Do not track precompiled assets
+/public/assets
