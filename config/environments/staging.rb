@@ -6,6 +6,9 @@ Diningstatus::Application.configure do
   end
   # Settings specified here will take precedence over those in config/application.rb
 
+  # Redis URL
+  ENV["REDIS_URL"] = 'redis://redistogo:e346c3841c95028eb83ed48cd92ef10f@herring.redistogo.com:9499/'
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
