@@ -30,5 +30,14 @@ describe Location do
       Timecop.freeze(t)
       location.status.should be_true
     end
+
+    it "reports closed when closed"  do
+      location = Factory(:location)
+      $redis.del location.name if $redis.exists location.name #Flush the cache
+      location.hours << Factory(:hour)
+      t = Time.now.beginning_of_week + 12.hours
+      Timecop.freeze(t)
+      location.status.should be_false
+    end
   end
 end
