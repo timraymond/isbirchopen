@@ -71,7 +71,7 @@ body {
       li {
         display: block;
       
-        width: 240px;
+        width: 220px;
         margin: 0 auto;
         padding: 10px;
         font-family: 'Short Stack', cursive;
@@ -79,8 +79,12 @@ body {
         font-size: 16pt;
       }
 
+      
       img {
+        &:before {  content:" "; }
         display: inline;
+        padding-left: 5px;
+        vertical-align: text-bottom;
       }
     }
   }
