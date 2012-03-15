@@ -4,6 +4,9 @@ Diningstatus::Application.configure do
   # Redis URL
   ENV["REDIS_URL"] = 'redis://redistogo:e346c3841c95028eb83ed48cd92ef10f@herring.redistogo.com:9499/'
   
+  # Google Analytics
+  config.gem 'rack-google-analytics', :lib => 'rack/google-analytics'
+  config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-30048343-1'
   # Code is not reloaded between requests
   config.cache_classes = true
 

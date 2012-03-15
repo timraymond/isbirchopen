@@ -34,6 +34,7 @@ gem 'jquery-rails'
 
 gem 'heroku', :group => [:staging, :production]
 gem 'redis'
+gem 'rack-google-analytics', :require => 'rack/google-analytics', :group => :production
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
